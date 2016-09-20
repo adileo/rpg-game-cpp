@@ -1,0 +1,2 @@
+2016-09-20 17:46:27,788 FATAL [default] CRASH HANDLED; Application has crashed due to [SIGINT] signal
+2016-09-20 17:46:27,789 WARN  [default] Aborting application. Reason: Fatal log at [/Users/adileobarone/git/rpg-game-cpp/src/lib/easylogging++.hpp:5627]
