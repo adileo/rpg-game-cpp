@@ -8,3 +8,6 @@ Per compilare:
 
 Per avviare il gioco:
 `./rpg`
+
+Comando per visualizzare l'aiuto in-game:
+`help`
