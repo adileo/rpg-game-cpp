@@ -68,10 +68,12 @@ void GameManager::nextTurn(){
 	}
 
 	turn++;
-	cout << endl << endl;
-	cout << "Turno "<< turn << endl;
-	cout << "Gioca "<< currentPlayer->getName() << endl;
+    cout << endl << endl << endl << endl << endl;
+    cout << "--------------------------" << endl;
+	cout << "Turno "<< turn << " - Gioca " << currentPlayer->getName() << endl;
+	
 	currentPlayer->setEnergy(100);
+    renderer.renderGUI();
 }
 
 void GameManager::addPlayer(string s){
@@ -94,6 +96,10 @@ void GameManager::handleInput(string s){
 			cout << "Energia terminata, passo il turno automaticamente" << endl;
 			nextTurn();
 		}
+        if(gameWon == 1){
+            cout << "+++++++ Vince " << getCurrentPlayer()->getName() << " +++++++" << endl;
+            inGame = 0;
+        }
 		//Dopo ogni input renderizzo la scena
 	}else if(s == "end turn"){
 		nextTurn();
@@ -135,8 +141,7 @@ std::list<Character*> GameManager::getPlayersAtPosition(Coord pos){
 }
 
 void GameManager::win(){
-	getRenderer()->addMsg("+++ Vince " + getCurrentPlayer()->getName());
-
+	gameWon = 1;
 	inGame = 0;
 }
 

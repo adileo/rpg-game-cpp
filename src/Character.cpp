@@ -26,7 +26,7 @@ Character::Character(GameManager* gm, string character_name)
 	energy = 0;
 }
 
-string Character::getName() const{
+string Character::getName(){
 	return name;
 }
 
@@ -34,7 +34,7 @@ void Character::setEnergy(int x){
 	energy = x;
 }
 
-int Character::getEnergy() const{
+int Character::getEnergy(){
 	return energy;
 }
 

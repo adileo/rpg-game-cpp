@@ -32,6 +32,7 @@ private:
 
 	int turn;
 	int inGame;
+    int gameWon;
 
 public:
 	GameManager();

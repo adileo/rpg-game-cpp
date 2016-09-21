@@ -22,16 +22,37 @@
 //Faccio una forward declaration per evitare le dipendenze circolari
 class GameManager;
 
+struct RoomNode{
+    Room* value;
+    RoomNode* next;
+};
+
+class RoomList{
+private:
+    int size;
+    RoomNode* head;
+    RoomNode* tail;
+public:
+    RoomList();
+    void push(Room* rm);
+    RoomNode* getHead();
+    RoomNode* getBack();
+    int length();
+    void destroy();
+};
+
 class Map{
 private:
-	std::list<Room> roomList;
+	//std::list<Room> roomList;
+    RoomList rmlist;
 	GameManager* gm;
 public:
 	Map(GameManager* g);
 	~Map();
 	Room* getRoom(Coord coord);
 	Room* getRoomOrCreate(Coord coord);
-	std::list<Room>* getRooms();
+	//std::list<Room>* getRooms();
+    RoomList* getRooms();
 };
 
 

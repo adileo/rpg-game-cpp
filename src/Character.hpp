@@ -20,9 +20,9 @@ private:
 	int energy;
 public:
 	Character(GameManager* gm, string character_name);
-	string getName() const;
+	string getName();
 	void setEnergy(int x);
-	int getEnergy() const;
+	int getEnergy();
 	void move(Directions dir);
 	void move(Coord coord);
 	int handleInput(string s);
